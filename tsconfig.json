@@ -21,9 +21,11 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "src/contexts/ColorThemeContext.tsx"
   ],
   "exclude": [
+    "**/ChallengeBox.tsx",
     "node_modules"
   ]
 }
