@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ChallengeBoxContainer = styled.div`
     height: 100%;
 
-    background-color: var(--white);
+    background-color: ${props => {return props.theme.colors.white}};
     border-radius: 5px;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
     padding: 1.5rem 2rem;

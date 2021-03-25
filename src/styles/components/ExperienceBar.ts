@@ -12,7 +12,7 @@ export const ExperienceBarContainer = styled.header`
         flex: 1;
         height: 4px;
         border-radius: 4px;
-        background-color: var(--gray_line);
+        background-color: ${props => {return props.theme.colors.grayLine}};
         margin: 0 1.5rem;
         position: relative;
     }
@@ -20,7 +20,7 @@ export const ExperienceBarContainer = styled.header`
     & > div > div{
         height: 4px;
         border-radius: 4px;
-        background-color: var(--green);
+        background-color: ${props => {return props.theme.colors.green}};
     }
 `
 

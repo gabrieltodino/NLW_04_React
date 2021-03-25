@@ -14,7 +14,7 @@ export const Overlay = styled.div`
 `
 
 export const Container = styled.div`
-    background-color: var(--white);
+    background-color: ${props => {return props.theme.colors.white}};
     width: 100%;
     max-width: 400px;
     padding: 2rem 3rem;
@@ -26,19 +26,19 @@ export const Container = styled.div`
     header {
         font-size: 8.75rem;
         font-weight: 600;
-        color: var(--blue);
+        color: ${props => {return props.theme.colors.blue}};
         background: url('/icons/levelup.svg') no-repeat center;
         background-size: contain;
     }
 
     strong {
         font-size: 2.25rem;
-        color: var(--title);
+        color: ${props => {return props.theme.colors.title}};
     }
 
     p{
         font-size: 1.25rem;
-        color: var(--text);
+        color: ${props => {return props.theme.colors.text}};
         margin-top: 0.25rem;
     }
 

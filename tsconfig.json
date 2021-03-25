@@ -19,10 +19,10 @@
     "jsx": "preserve"
   },
   "include": [
+    "src/*"
+  ],"files": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/contexts/ColorThemeContext.tsx"
+    "src/styles/styled.d.ts"
   ],
   "exclude": [
     "**/ChallengeBox.tsx",

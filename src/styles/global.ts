@@ -20,8 +20,8 @@ export default createGlobalStyle`
     }
 
     body {
-        background-color: var(--background);
-        color: var(--text);
+        background-color: ${props => {return props.theme.colors.background}};
+        color: ${props => {return props.theme.colors.text}};
     }
 
     body, input, textarea, button {
