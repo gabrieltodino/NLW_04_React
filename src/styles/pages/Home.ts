@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     height: 100vh;
-    max-width: 992px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 2.5rem 2rem;
 
@@ -16,5 +16,15 @@ export const Container = styled.div`
         grid-template-columns: 1fr 1fr;
         gap: 6.25rem;
         align-content: center;
+    }
+
+    @media (max-width: 780px) {
+        & {
+            max-width: 700px;
+        }
+
+        section {
+            grid-template-columns: 1fr;
+        }
     }
 `

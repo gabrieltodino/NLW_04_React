@@ -19,5 +19,11 @@ export const CompletedChallengesContainer = styled.div`
     span:last-child {
         font-size: 1.5rem;
     }
+
+    @media (min-height: 340px) {
+        & {
+            margin: 2rem 0;
+        }
+    }
 `
 

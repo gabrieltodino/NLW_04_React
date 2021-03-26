@@ -43,16 +43,22 @@ export const ChallengeNotActive = styled.div`
 
 export const ChallengeActive = styled.div`
     height: 100%;
-
+    
     display: flex;
     flex-direction: column;
 
+    @media (max-width: 780px) {
+        & {
+            min-height: 25rem;
+        }
+    }
+
     header {
-        color: var(--blue);
+        color: ${props => {return props.theme.colors.blue}};
         font-weight: 600;
         font-size: 1.25rem;
         padding: 0 2rem 1.5rem;
-        border-bottom: 1px solid var(--gray_line);
+        border-bottom: 1px solid ${props => {return props.theme.colors.grayLine}};
     }
 
     main {
@@ -70,7 +76,7 @@ export const ChallengeActive = styled.div`
     main strong{
         font-size: 2rem;
         font-weight: 600;
-        color: var(--title);
+        color: ${props => {return props.theme.colors.title}};
         margin: 1.5rem 0 1rem;
     }
 
@@ -87,7 +93,7 @@ export const ChallengeActive = styled.div`
         align-items: center;
         justify-content: center;
     
-        color: var(--white);
+        color: ${props => {return props.theme.colors.btnText}};
     
         border: 0;
         border-radius: 5px;
@@ -99,11 +105,11 @@ export const ChallengeActive = styled.div`
     }
 
     footer button.challengeFailedButton {
-        background-color: var(--red);
+        background-color: ${props => {return props.theme.colors.red}};
     }
 
     footer button.challengeSuccededButton {
-        background-color: var(--green);
+        background-color: ${props => {return props.theme.colors.green}};
     }
 
     footer button:hover {

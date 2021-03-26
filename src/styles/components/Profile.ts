@@ -28,4 +28,10 @@ export const ProfileContainer = styled.div`
     div p img{
         margin-right: 0.5rem;
     }
+
+    @media (max-width: 780px) {
+        & {
+            margin-top: 2.5rem;
+        }
+    }
 `

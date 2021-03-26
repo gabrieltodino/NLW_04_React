@@ -33,12 +33,14 @@ export function ChallengeBox(){
                         <button
                             type="button"
                             onClick={handleChallengeFailed}
+                            className="challengeFailedButton"
                         >
                             Falhei
                         </button>
                         <button
                             type="button"
                             onClick = {handleChallengeSucceded}
+                            className="challengeSuccededButton"
                         >
                             Completei
                         </button>
