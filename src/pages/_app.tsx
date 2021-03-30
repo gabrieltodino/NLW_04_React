@@ -1,20 +1,22 @@
-import GlobalStyle from '../styles/global';
+import React from 'react';
+import Head from 'next/head'
+
+import usePersistedState from '../utils/usePersistedState'
 
 import light from '../styles/themes/light';
 import dark from '../styles/themes/dark'; 
 import { ThemeProvider } from 'styled-components';  
 
-import React from 'react';
-import Head from 'next/head'
+import GlobalStyle from '../styles/global';
 
-import usePersistedState from '../utils/usePersistedState'
+import { LogInProvider } from  '../contexts/LogInContext'
 
 const MyApp = ({ Component, pageProps }) => {
   const [theme, setTheme] = usePersistedState(dark, 'theme');
 
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light)
-};
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -23,7 +25,9 @@ const MyApp = ({ Component, pageProps }) => {
         </Head>
         
         <GlobalStyle/>
-        <Component {...pageProps} toggleTheme={toggleTheme}/>
+        <LogInProvider>
+          <Component {...pageProps} toggleTheme={toggleTheme}/>
+        </LogInProvider>
     </ThemeProvider>
   );
 };

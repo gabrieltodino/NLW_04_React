@@ -14,5 +14,6 @@ export default {
         blueDark: "#4953b8",
         blueTwitter: "#2aa9e0",
         btnText: "#eee",
+        black: "#000",
     },
 }

@@ -5,7 +5,7 @@ import {ProfileContainer} from '../styles/components/Profile'
 
 export function Profile() {
     const { level } = useContext(ChallengesContext)
-
+    
     return (
         <ProfileContainer>
             <img src="https://github.com/gabrieltodino.png" alt="Gabriel Todino"/>

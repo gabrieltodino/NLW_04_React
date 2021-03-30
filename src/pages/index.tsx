@@ -3,58 +3,78 @@ import { Countdown } from "../ components/Countdown";
 import { ExperienceBar } from "../ components/ExperienceBar";
 import { Profile } from "../ components/Profile";
 import { ChallengeBox } from "../ components/ChallengeBox";
-import { ChangeColorTheme } from "../ components/ChangeColorTheme";
+import { LogInPage } from "../ components/LogInPage";
+import { Bottom } from "../ components/Bottom";
 
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
+import React from 'react';
+
+import { useSession} from 'next-auth/client'
 
 import { Container } from '../styles/pages/Home'
 
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
-
+import { LogInContext } from "../contexts/LogInContext";
 
 interface HomeProps {
   level:number;
   currentExperience:number;
   challengesCompleted:number;
   toggleTheme: () => {};
+  loginState: boolean;
+  
 }
 
 export default function Home(props: HomeProps) {
+  const [session, loading] = useSession();
+  const { loginState } = React.useContext(LogInContext)
+
+  let logic = session || loginState === true
+  
 
   return (
-      
-        <ChallengesProvider
-          level={props.level}
-          currentExperience={props.currentExperience}
-          challengesCompleted={props.challengesCompleted}
-        >
-          <Container>
-            <Head>
-              <title>Inicio | move.it</title>
-            </Head>
+    <>
+      {!logic &&
+        <Container>
+            <LogInPage />
+        </Container>
+      }
+      {logic && 
+          <ChallengesProvider
+            level={props.level}
+            currentExperience={props.currentExperience}
+            challengesCompleted={props.challengesCompleted}
+          >
+            <Container>
+              <Head>
+                <title>Inicio | move.it</title>
+              </Head>
 
-            <ExperienceBar />
+              <ExperienceBar />
 
-            <CountdownProvider>
-              <section>
-                <div>
-                  <Profile />
-                  <CompletedChallenges />
-                  <Countdown />
-                </div>
+              <CountdownProvider>
+                <section>
+                  <div>
+                    <Profile />
+                    <CompletedChallenges />
+                    <Countdown />
+                  </div>
 
-                <div>
-                  <ChallengeBox />
-                </div>
-              </section>
-            </CountdownProvider>
+                  <div>
+                    <ChallengeBox />
+                  </div>
+                </section>
+              </CountdownProvider>
+              
 
-            <ChangeColorTheme toggleTheme={props.toggleTheme}/>
+              <Bottom toggleTheme={props.toggleTheme}/>
 
-          </Container>
-        </ChallengesProvider>
+            </Container>
+          </ChallengesProvider>
+      }
+    </>
   )
 }
 
