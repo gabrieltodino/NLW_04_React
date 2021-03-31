@@ -7,7 +7,7 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 
-    @media(max-width: 720){
+    @media(max-width: 720px){
         html {
             font-size: 87.5%;
         }

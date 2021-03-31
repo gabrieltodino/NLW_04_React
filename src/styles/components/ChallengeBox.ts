@@ -46,7 +46,7 @@ export const ChallengeActive = styled.div`
     
     display: flex;
     flex-direction: column;
-
+    
     @media (max-width: 780px) {
         & {
             min-height: 25rem;
