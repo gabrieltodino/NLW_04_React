@@ -3,14 +3,16 @@ import { ChallengesContext } from '../contexts/ChallengesContext'
 
 import {ProfileContainer} from '../styles/components/Profile'
 
-export function Profile() {
+export function Profile(props ) {
     const { level } = useContext(ChallengesContext)
+
+    const data = props.userData.user
     
     return (
         <ProfileContainer>
-            <img src="https://github.com/gabrieltodino.png" alt="Gabriel Todino"/>
+            <img src={data.image || "User_icon.png"} alt="Gabriel Todino"/>
             <div>
-                <strong>Gabriel Todino</strong>
+                <strong>{data.name}</strong>
                 <p>
                     <img src="icons/level.svg" alt="Level"/>
                     Level {level}

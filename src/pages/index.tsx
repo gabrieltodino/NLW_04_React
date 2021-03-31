@@ -8,7 +8,7 @@ import { Bottom } from "../ components/Bottom";
 
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
-import React from 'react';
+import { useContext } from 'react';
 
 import { useSession} from 'next-auth/client'
 
@@ -29,19 +29,21 @@ interface HomeProps {
 
 export default function Home(props: HomeProps) {
   const [session, loading] = useSession();
-  const { loginState } = React.useContext(LogInContext)
+  const { loginState } = useContext(LogInContext)
 
-  let logic = session || loginState === true
-  
+  let logInPage = session || loginState.state === true
+
+  let userData = session || loginState
+    
 
   return (
     <>
-      {!logic &&
+      {!logInPage &&
         <Container>
             <LogInPage />
         </Container>
       }
-      {logic && 
+      {logInPage && 
           <ChallengesProvider
             level={props.level}
             currentExperience={props.currentExperience}
@@ -57,7 +59,7 @@ export default function Home(props: HomeProps) {
               <CountdownProvider>
                 <section>
                   <div>
-                    <Profile />
+                    <Profile userData={userData}/>
                     <CompletedChallenges />
                     <Countdown />
                   </div>
