@@ -10,7 +10,7 @@ export function Profile(props ) {
     
     return (
         <ProfileContainer>
-            <img src={data.image || "User_icon.png"} alt="Gabriel Todino"/>
+            <img src={data.image || "User_icon.png"} alt="profile"/>
             <div>
                 <strong>{data.name}</strong>
                 <p>

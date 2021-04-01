@@ -8,7 +8,7 @@ export function CompletedChallenges() {
 
     return (
         <CompletedChallengesContainer>
-            <span>Desafio completos</span>
+            <span>Complete challenges</span>
             <span>{challengesCompleted}</span>
         </CompletedChallengesContainer>
     )

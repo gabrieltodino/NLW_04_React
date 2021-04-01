@@ -35,7 +35,7 @@ export function Countdown() {
                 <CountdownButton
                     disabled
                 >
-                    Ciclo encerrado
+                    Cycle terminated
                 </CountdownButton>
             ) : (
                 <>
@@ -43,13 +43,13 @@ export function Countdown() {
                         <CountdownButtonActive
                             onClick={resetCountdown}
                         >
-                            Abandonar ciclo
+                            Abandon cycle
                         </CountdownButtonActive>
                     ) : (
                         <CountdownButton
                             onClick={startCountdown}
                         >
-                            Iniciar um ciclo
+                            Start cycle
                         </CountdownButton>
                     )}
                 </>

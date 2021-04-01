@@ -27,7 +27,7 @@ export function LogInPage() {
 
     return (
         <LoginBox>
-            <img src="logo-full.svg" alt="logo move it"></img>
+            <img src="logo-full.svg" alt="move it"></img>
 
             <Link href='/'>
                 <GithubButton
