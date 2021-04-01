@@ -1,4 +1,4 @@
-## ![Move It - NLW 04](https://moveit-nlw-rust.vercel.app)
+## [Move It - NLW 04](https://moveit-nlw-rust.vercel.app)
 
 Project developed during a free workshop, by rocketseat. A project developed thinking in people who work a long time sitting, mainly in front of screens.<br/>
 It uses the pomodoro technique of productivity, and each pause suggests an exercise, with a system of rewards per score.<br/>
